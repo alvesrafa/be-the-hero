@@ -2,7 +2,7 @@ const connection = require('../database/connection');
 const crypto = require('crypto');
 
 module.exports = {
-  async postOng(req,res){
+  async create(req,res){
     const { name, email, whatsapp, city, uf } = req.body;
     const id = crypto.randomBytes(4).toString('HEX');
   
@@ -17,7 +17,7 @@ module.exports = {
   
     return res.json({ id });
   },
-  async getOngs(req,res) {
+  async index(req,res) {
     const ongs = await connection('ongs').select('*');
 
     return res.json(ongs)
