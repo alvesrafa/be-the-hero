@@ -14,6 +14,8 @@ export default function Routes(){
 
         <Route path="/profile" component={Profile} />
         <Route path="/incidents/new" component={NewIncident} />
+        <Route path="/incidents/update/:id" component={NewIncident} />
+        
       </Switch>
     </BrowserRouter>
   )

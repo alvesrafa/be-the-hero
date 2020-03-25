@@ -48,6 +48,38 @@ module.exports = {
 
     return res.status(204).send();
 
+  },
+  async update(req,res) {
+    const { id } = req.params;
+    const ong_id = req.headers.authorization;
+    const { title, description, value } = req.body;
+
+    const incident = await connection('incidents')
+                          .where('id', id).select('ong_id').first();
+
+    if(incident.ong_id !== ong_id) return res.status(401).json({error: 'Operação não permitida'})
+    await connection('incidents')
+          .where('id', id)
+          .update({
+            title,
+            description,
+            value,
+            ong_id
+          });
+
+    return res.status(200).send();
+
+  },
+  async show(req,res) {
+    const { id } = req.params; //id do caso
+    const ong_id = req.headers.authorization;
+
+    const incident = await connection('incidents')
+                          .where('id', id).select('*').first();
+
+    if(incident.ong_id !== ong_id) return res.status(401).json({error: 'Operação não permitida'})
+
+    return res.status(200).json(incident);
   }
   
 }

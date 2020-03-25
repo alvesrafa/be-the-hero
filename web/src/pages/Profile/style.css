@@ -54,7 +54,14 @@
   position: relative;
 }
 
-.profile-container ul li button {
+.profile-container ul li a {
+  background: transparent;
+  position: absolute;
+  right: 60px;
+  top: 24px;
+  border: 0;
+}
+.profile-container ul li a + button{
   background: transparent;
   position: absolute;
   right: 24px;

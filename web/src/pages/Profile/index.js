@@ -4,7 +4,7 @@ import api from '../../services/api';
 
 import logoImg from '../../assets/logo.svg';
 import { Link, useHistory } from 'react-router-dom';
-import { FiPower, FiTrash2 } from 'react-icons/fi';
+import { FiPower, FiTrash2, FiEdit } from 'react-icons/fi';
 
 export default function Profile(){
   const ongName = localStorage.getItem('ongName');
@@ -43,6 +43,10 @@ export default function Profile(){
     localStorage.clear();
     history.push('/');
   }
+  function handleEdit(id){
+    console.log('editando ', id)
+    
+  }
 
   return (
     <div className="profile-container">
@@ -73,9 +77,14 @@ export default function Profile(){
               <strong>VALOR: </strong>
               <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(incident.value)}</p>
               
+              <Link to={`/incidents/update/${incident.id}`} >
+                <FiEdit size={20} color="#16b556" />
+              </Link>
+              
               <button onClick={() => handleDeleteIncident(incident.id)} type="button">
-                <FiTrash2 size={20} color="#a8a8b3" />
+                <FiTrash2 size={20} color="#e02041" />
               </button>
+              
             </li>
           ))
         }
