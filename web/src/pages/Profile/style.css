@@ -87,3 +87,12 @@
   font-size: 16px;
 
 }
+
+@media only screen and (max-width: 768px){
+  .profile-container header img {
+    height: 32px;
+  }
+  .profile-container  ul {
+    grid-template-columns: 1fr;
+  }
+}

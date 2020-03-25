@@ -43,11 +43,6 @@ export default function Profile(){
     localStorage.clear();
     history.push('/');
   }
-  function handleEdit(id){
-    console.log('editando ', id)
-    
-  }
-
   return (
     <div className="profile-container">
       <header>
@@ -66,6 +61,7 @@ export default function Profile(){
 
       <ul>
         {
+          incidents.length !== 0 ?
           incidents.map(incident => (
             <li key={incident.id}>
               <strong>CASO: </strong>
@@ -87,6 +83,8 @@ export default function Profile(){
               
             </li>
           ))
+          :
+          <p>Nenhum caso cadastrado até o momento.</p>
         }
         
        

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './style.css';
 import logoImg from '../../assets/logo.svg';
-import { Link, useHistory } from 'react-router-dom'
-import { FiArrowLeft } from 'react-icons/fi'
-
+import { Link, useHistory } from 'react-router-dom';
+import { FiArrowLeft } from 'react-icons/fi';
+import InputMask from 'react-input-mask';
 import api from '../../services/api';
 
 export default function Register(){
@@ -20,7 +20,7 @@ export default function Register(){
     const data = {
       name,
       email,
-      whatsapp: wpp,
+      whatsapp: wpp, //.replace('(','').replace(')','').replace('-','').replace(' ','') retirar no backend...
       city,
       uf
     }
@@ -56,24 +56,29 @@ export default function Register(){
             placeholder="E-mail" 
             value={email} 
             onChange={e => setEmail(e.target.value)}
+            required
           />
-          <input 
+          <InputMask mask="(99) 99999-9999"
             placeholder="WhatsApp" 
             value={wpp} 
             onChange={e => setWpp(e.target.value)}
+            required
           />
 
           <div className="input-group">
             <input 
-              placeholder="Cidade" 
-              value={city} 
-              onChange={e => setCity(e.target.value)}
-            />
-            <input 
               placeholder="UF" 
               style={{ width: 80 }} 
               value={uf} 
+              maxLength={2}
               onChange={e => setUf(e.target.value)} 
+              required
+            />
+            <input 
+              placeholder="Cidade" 
+              value={city} 
+              onChange={e => setCity(e.target.value)}
+              required
             />
           </div>
 

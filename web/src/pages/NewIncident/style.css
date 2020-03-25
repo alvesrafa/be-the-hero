@@ -44,3 +44,27 @@
 .new-incident-container .content form textarea {
   margin-top: 8px;
 }
+
+@media only screen and (max-width: 768px){
+  .new-incident-container  {
+    height: auto;
+  }
+  .new-incident-container .content {
+    width: 80%;
+    flex-direction: column;
+    padding: 26px;
+  }
+  .new-incident-container .content section img {
+    height: 60px;
+  }
+  .new-incident-container .content section h1 {
+    margin: 12px 0 10px;
+    font-size: 32px;
+  }
+  
+}
+@media only screen and (max-width: 500px) {
+  .new-incident-container .content {
+    width: 100%;
+  }
+}

@@ -5,6 +5,7 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import api from '../../services/api';
 
+
 export default function NewIncident({query}){
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
@@ -32,7 +33,7 @@ export default function NewIncident({query}){
       alert(e)
       history.push('/profile');
     })
-  }, [])
+  }, [id, history, ongId])
 
 
   async function handleNewIncident(e){
@@ -94,16 +95,20 @@ export default function NewIncident({query}){
             placeholder="Titulo do caso" 
             value={title}
             onChange={e => setTitle(e.target.value)}
+            required
           />
           <textarea 
             placeholder="Descrição" 
             value={description}
             onChange={e => setDescription(e.target.value)}
+            required
           />
           <input 
             placeholder="Valor em reais" 
+            type="numer"
             value={value}
             onChange={e => setValue(e.target.value)}
+            required
           />
 
 
