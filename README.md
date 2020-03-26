@@ -11,7 +11,7 @@ Aplicação onde pessoas com coração de heróis poderão realizar seus atos de
 * [x] 23/03 - Conhecendo a OmniStack
 * [x] 24/03 - Criando o Back-end da aplicação (NodeJS)
 * [x] 25/03 - Construindo interface web com ReactJS
-* [ ] 26/03 - Desenvolvendo aplicação mobile com React Native
+* [x] 26/03 - Desenvolvendo aplicação mobile com React Native
 * [ ] 27/03 - Funcionalidades Avançadas (surpresa)
 
 #### Aplicação sendo desenvolvida durante a Semana Omnistack 11.0 da [RocketSeat](https://github.com/Rocketseat)
