@@ -1,21 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import styles from './style';
+import { View, Image, Switch } from 'react-native';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import * as Styled from './style';
 import logoImg from '../../assets/logo.png';
 import { Feather } from '@expo/vector-icons';
 import api from '../../services/api';
 import LottieView from 'lottie-react-native';
 import loadingIcon from '../../assets/loading.json';
 
-export default function Incidents(){
+export default function Incidents({checked, setChecked}){
   const navigation = useNavigation();
   const [incidents, setIncidents] = useState([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
 
-
+  
+  function handleChange(){
+    checked ? setChecked(false) : setChecked(true)
+  }
   function navigateToDetail(incident){
     navigation.navigate('Detail', { incident });
   }
@@ -39,24 +42,29 @@ export default function Incidents(){
     loadIncidents()
   }, [])
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
+    <Styled.Container>
+     <Styled.Header>
         <Image source={logoImg} />
-        <Text style={styles.headerText}>
-          Total de <Text style={styles.headerTextBold}>{total} casos.</Text>
-        </Text>
-      </View>
-      <Text style={styles.title}>Bem-vindo!</Text>
-      <Text style={styles.description}>Escolha um dos casos abaixo e salve o dia de alguém.</Text>
+        <Styled.HeaderText>
+          Total de <Styled.HeaderTextBold>{total} casos.</Styled.HeaderTextBold>
+        </Styled.HeaderText>
+        <Switch 
+          onValueChange={handleChange}
+          value={checked}
+          thumbColor={'#e02041'}
+          trackColor={{true: '#737380', false: '#000'}}
+        />
+      </Styled.Header>
+      <Styled.Title>Bem-vindo!</Styled.Title>
+      <Styled.Desciption>Escolha um dos casos abaixo e salve o dia de alguém.</Styled.Desciption>
 
 
-      <FlatList 
-        style={styles.incidentList}
+      <Styled.IncidentList 
         data={incidents}
-        keyExtractor={incident => incident.id} 
+        keyExtractor={incident => String(incident.id)} 
         showsVerticalScrollIndicator={false}
         onEndReached={loadIncidents}
-        onEndReachedThreshold={0.003}
+        onEndReachedThreshold={0.001}
         ListFooterComponent={loading ? 
           <View style={{ height: 100}}>
             <LottieView
@@ -67,34 +75,33 @@ export default function Incidents(){
           </View> : <></>
         }
         renderItem={({item: incident}) => (
-          <View style={styles.incident}>
-            <Text style={styles.incidentProperty}>ONG:</Text>
-            <Text style={styles.incidentValue}>{incident.name}:</Text>
+          <Styled.Incident>
+            <Styled.IncidentProperty>ONG:</Styled.IncidentProperty>
+            <Styled.IncidentValue>{incident.name}:</Styled.IncidentValue>
 
-            <Text style={styles.incidentProperty}>CASO:</Text>
-            <Text style={styles.incidentValue}>{incident.title}:</Text>
+            <Styled.IncidentProperty>CASO:</Styled.IncidentProperty>
+            <Styled.IncidentValue>{incident.title}:</Styled.IncidentValue>
 
-            <Text style={styles.incidentProperty}>VALOR:</Text>
-            <Text style={styles.incidentValue}>
+            <Styled.IncidentProperty>VALOR:</Styled.IncidentProperty>
+            <Styled.IncidentValue>
               {
                 Intl
                 .NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
                 .format(incident.value)
               }
-            </Text>
+            </Styled.IncidentValue>
 
-            <TouchableOpacity 
-              style={styles.detailsButton} 
+            <Styled.DetailsButton
               onPress={() => navigateToDetail(incident)}
             >
-              <Text style={styles.detailsButtonText}>Ver mais detalhes</Text>
+              <Styled.DetailsButtonText>Ver mais detalhes</Styled.DetailsButtonText>
               <Feather name="arrow-right" size={16} color="#e02041" />
-            </TouchableOpacity>
-          </View>
+            </Styled.DetailsButton>
+          </Styled.Incident>
         )}
 
       />
       
-    </View>
+    </Styled.Container>
   )
 }

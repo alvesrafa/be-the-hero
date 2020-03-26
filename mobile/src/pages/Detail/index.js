@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity, Linking } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import styles from './style';
+import * as Styled from './style';
 import logoImg from '../../assets/logo.png';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import * as MailComposer from 'expo-mail-composer';
@@ -32,47 +32,47 @@ export default function Detail(){
     Linking.openURL(`whatsapp://send?phone=+55${incident.whatsapp}&text=${message}`)
   }
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
+    <Styled.Container>
+      <Styled.Header>
         <Image source={logoImg} />
 
         <TouchableOpacity onPress={navigateBack}>
           <Feather name="arrow-left" size={28} color="#e02041" />
         </TouchableOpacity>
-      </View>
+      </Styled.Header>
 
-      <View style={styles.incident}>
-        <Text style={styles.incidentProperty, { marginTop: 0 }}>ONG:</Text>
-        <Text style={styles.incidentValue}>{incident.name} de {incident.city}/{incident.uf}</Text>
+      <Styled.Incident>
+        <Styled.IncidentProperty style={{marginTop: 0}}>ONG:</Styled.IncidentProperty>
+        <Styled.IncidentValue>{incident.name} de {incident.city}/{incident.uf}</Styled.IncidentValue>
 
-        <Text style={styles.incidentProperty}>CASO:</Text>
-        <Text style={styles.incidentValue}>{incident.title}:</Text>
+        <Styled.IncidentProperty>CASO:</Styled.IncidentProperty>
+        <Styled.IncidentValue>{incident.title}:</Styled.IncidentValue>
 
-        <Text style={styles.incidentProperty}>VALOR:</Text>
-        <Text style={styles.incidentValue}>
+        <Styled.IncidentProperty>VALOR:</Styled.IncidentProperty>
+        <Styled.IncidentValue>
           {
             Intl
             .NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
             .format(incident.value)
           }
-        </Text>
+        </Styled.IncidentValue>
 
-      </View>
-      <View style={styles.contactBox}>
-        <Text style={styles.heroTitle}>Salve o dia!</Text>
-        <Text style={styles.heroTitle}>Seja o herói desse caso.</Text>
+      </Styled.Incident>
+      <Styled.ContactBox>
+        <Styled.HeroTitle>Salve o dia!</Styled.HeroTitle>
+        <Styled.HeroTitle>Seja o herói desse caso.</Styled.HeroTitle>
 
-        <Text style={styles.heroDescription}>Entre em contato:</Text>
+        <Styled.HeroDescription>Entre em contato:</Styled.HeroDescription>
 
-        <View style={styles.actions}>
-          <TouchableOpacity style={styles.action} onPress={sendWhatsApp}>
-            <Text style={styles.actionText}>WhatsApp</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.action} onPress={sendMail}>
-            <Text style={styles.actionText}>E-mail</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </View>
+        <Styled.Actions>
+          <Styled.Action onPress={sendWhatsApp}>
+            <Styled.ActionText>WhatsApp</Styled.ActionText>
+          </Styled.Action>
+          <Styled.Action onPress={sendMail}>
+            <Styled.ActionText>E-mail</Styled.ActionText>
+          </Styled.Action>
+        </Styled.Actions>
+      </Styled.ContactBox>
+    </Styled.Container>
   )
 }
