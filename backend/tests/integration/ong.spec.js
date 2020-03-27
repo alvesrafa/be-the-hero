@@ -23,5 +23,11 @@ describe('ONG', () => {
 
     expect(response.body).toHaveProperty('id');
     expect(response.body.id).toHaveLength(8);
+  });
+  it('Deverá mostrar todas as ongs cadastradas', async () => {
+    const response = await request(app)
+    .get('/ongs')
+
+    expect(response.body);
   })
 })

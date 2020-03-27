@@ -17,14 +17,17 @@ export default function Register(){
   
   async function handleRegister(e){
     e.preventDefault();
+    let numero = String(wpp.replace('(','').replace(')','').replace('-','').replace(' ',''))
+   
+
     const data = {
       name,
       email,
-      whatsapp: wpp, //.replace('(','').replace(')','').replace('-','').replace(' ','') retirar no backend...
+      whatsapp: numero,
       city,
       uf
     }
-
+    
     await api.post('/ongs', data).then(response => {
       alert(`Seu ID de acesso: ${response.data.id}. Guarde bem essa informação!`)
       history.push('/');

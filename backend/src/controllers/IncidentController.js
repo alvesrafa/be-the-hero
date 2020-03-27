@@ -33,22 +33,6 @@ module.exports = {
 
     return res.json(incidents)
   },
-  async delete(req,res) {
-    const { id } = req.params;
-    const ong_id = req.headers.authorization; //ele esta logado então ta no headers
-
-    const incident = await connection('incidents')
-                          .where('id', id)
-                          .select('ong_id').first();
-
-    if(incident.ong_id !== ong_id) return res.status(401).json({error: 'Operação não permitida'})
-    
-
-    await connection('incidents').where('id', id).delete();
-
-    return res.status(204).send();
-
-  },
   async update(req,res) {
     const { id } = req.params;
     const ong_id = req.headers.authorization;
@@ -68,6 +52,22 @@ module.exports = {
           });
 
     return res.status(200).send();
+
+  },
+  async delete(req,res) {
+    const { id } = req.params;
+    const ong_id = req.headers.authorization; //ele esta logado então ta no headers
+
+    const incident = await connection('incidents')
+                          .where('id', id)
+                          .select('ong_id').first();
+
+    if(incident.ong_id !== ong_id) return res.status(401).json({error: 'Operação não permitida'})
+    
+
+    await connection('incidents').where('id', id).delete();
+
+    return res.status(204).send();
 
   },
   async show(req,res) {
