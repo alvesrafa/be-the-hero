@@ -7,11 +7,20 @@ Aplicação Be The Hero ❤️ onde ONG's locais podem se cadastrar pelo site e 
 - ReactJS
 - React Native
 
-## Aplicação em desenvolvimento! :hammer:
-* [x] 23/03 - Conhecendo a OmniStack
-* [x] 24/03 - Criando o Back-end da aplicação (NodeJS)
-* [x] 25/03 - Construindo interface web com ReactJS
-* [x] 26/03 - Desenvolvendo aplicação mobile com React Native
-* [x] 27/03 - Funcionalidades Avançadas - Validações, Testes, Deploy e estudos Futuros
+##### Algumas dependências  
+- Styled-components
+- Celebrate
+- Knex
+- Express
+- Axios
+- React Router
+- React Navigation
 
-#### Aplicação sendo desenvolvida durante a Semana Omnistack 11.0 da [RocketSeat](https://github.com/Rocketseat)
+## Agenda do desenvolvimento :hammer:
+* ✔️ 23/03 - Conhecendo a OmniStack
+* ✔️ 24/03 - Criando o Back-end da aplicação (NodeJS)
+* ✔️ 25/03 - Construindo interface web com ReactJS
+* ✔️ 26/03 - Desenvolvendo aplicação mobile com React Native
+* ✔️ 27/03 - Funcionalidades Avançadas - Validações, Testes, Deploy e estudos Futuros
+
+#### Aplicação desenvolvida durante a Semana Omnistack 11.0 da [RocketSeat](https://github.com/Rocketseat)
