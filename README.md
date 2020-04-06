@@ -6,16 +6,16 @@
  
  [![MadeBy](https://img.shields.io/badge/institution-Rocketseat-purple)](https://github.com/rocketseat)
 [![license](https://img.shields.io/badge/student-raufa-red)](https://github.com/alvesrafa)
-
+![Forks](https://img.shields.io/github/forks/alvesrafa/be-the-hero.svg)
  </div>
 </p>
 
-<h1 align="center">Be The Hero </h1>
+<h1 align="center">Be The Hero :two_hearts: </h1>
 
 ## <strong>Aplicação Be The Hero</strong> :heart:
 Aplicação Be The Hero ❤️ onde ONG's locais podem se cadastrar pelo site e adicionar casos que necessitem de ajuda financeira. Os Heróis utilizam a aplicação mobile, selecionam o caso que desejam ajudar e entram em contato com a ONG por WhatsApp ou E-mail.:two_hearts:
 
-## <strong>Features</strong> :wrench:
+## :wrench: <strong>Features</strong> 
 - [Node.js](https://nodejs.org/en/) / [Express](https://expressjs.com/pt-br/)
 - [ReactJS]() com [Expo](https://expo.io/)
 - [ExpressJs](https://expressjs.com/pt-br/)
@@ -24,7 +24,7 @@ Aplicação Be The Hero ❤️ onde ONG's locais podem se cadastrar pelo site e 
 - [Cors](https://www.npmjs.com/package/cors)
 - [Jest](https://www.npmjs.com/package/jest)
 
-## <strong>Aplicação em desenvolvimento!</strong> :hammer:
+## :hammer: <strong>Aplicação em desenvolvimento!</strong> 
 * [x] 23/03 - Conhecendo a OmniStack
 * [x] 24/03 - Criando o Back-end da aplicação (NodeJS)
 * [x] 25/03 - Construindo interface web com ReactJS
