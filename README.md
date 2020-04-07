@@ -17,7 +17,8 @@ Aplicação Be The Hero ❤️ onde ONG's locais podem se cadastrar pelo site e 
 
 ## :wrench: <strong>Features</strong> 
 - [Node.js](https://nodejs.org/en/) / [Express](https://expressjs.com/pt-br/)
-- [ReactJS](https://pt-br.reactjs.org/) com [Expo](https://expo.io/)
+- [ReactNative](https://reactnative.dev/) com [Expo](https://expo.io/)
+- [ReactJS](https://pt-br.reactjs.org/)
 - [ExpressJs](https://expressjs.com/pt-br/)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
 - [Axios](https://www.npmjs.com/package/axios)
