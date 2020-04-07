@@ -17,14 +17,29 @@ Aplicação Be The Hero ❤️ onde ONG's locais podem se cadastrar pelo site e 
 
 ## :wrench: <strong>Features</strong> 
 - [Node.js](https://nodejs.org/en/) / [Express](https://expressjs.com/pt-br/)
-- [ReactJS]() com [Expo](https://expo.io/)
+- [ReactJS](https://pt-br.reactjs.org/) com [Expo](https://expo.io/)
 - [ExpressJs](https://expressjs.com/pt-br/)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
 - [Axios](https://www.npmjs.com/package/axios)
 - [Cors](https://www.npmjs.com/package/cors)
 - [Jest](https://www.npmjs.com/package/jest)
 
-## :hammer: <strong>Aplicação em desenvolvimento!</strong> 
+## <strong>Imagens</strong>
+
+<img src="https://i.imgur.com/VlOfKcn.jpg" width="200">
+
+<img src="https://i.imgur.com/fRTX4vw.jpg" width="200">
+
+<img src="https://i.imgur.com/jFUgyaS.jpg" width="200">
+
+<img src="https://i.imgur.com/QqcLMM8.png" width="600">
+
+<img src="https://i.imgur.com/Z0svlVC.png" width="600">
+
+
+
+
+## :hammer: <strong>Cronograma</strong> 
 * [x] 23/03 - Conhecendo a OmniStack
 * [x] 24/03 - Criando o Back-end da aplicação (NodeJS)
 * [x] 25/03 - Construindo interface web com ReactJS
