@@ -25,17 +25,21 @@ Aplicação Be The Hero ❤️ onde ONG's locais podem se cadastrar pelo site e 
 - [Jest](https://www.npmjs.com/package/jest)
 
 ## <strong>Imagens</strong>
-
+<span>
 <img src="https://i.imgur.com/VlOfKcn.jpg" width="200">
-
+</span>
+<span>
 <img src="https://i.imgur.com/fRTX4vw.jpg" width="200">
-
+</span>
+<span>
 <img src="https://i.imgur.com/jFUgyaS.jpg" width="200">
-
+</span>
+<span>
 <img src="https://i.imgur.com/QqcLMM8.png" width="600">
-
+</span>
+<span>
 <img src="https://i.imgur.com/Z0svlVC.png" width="600">
-
+</span>
 
 
 
